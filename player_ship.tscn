@@ -12,6 +12,10 @@ script = ExtResource("1_w77ey")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_xptfi")
 
+[node name="BulletSpawnPoint" type="Marker2D" parent="Sprite2D"]
+unique_name_in_owner = true
+position = Vector2(0, -66)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_lfe6m")

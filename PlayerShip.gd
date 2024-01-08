@@ -11,7 +11,13 @@ func _physics_process(delta):
 	if Input.is_action_pressed("rotate_clock"):
 		rotation += rotation_speed * delta
 	if Input.is_action_pressed("rotate_counter_clock"):
-		rotation -= rotation_speed 
+		rotation -= rotation_speed * delta
+	if Input.is_action_pressed("fire_weapon"):
+		const BULLET = preload("res://bullet.tscn")
+		var new_bullet = BULLET.instantiate()
+		new_bullet.global_position = %BulletSpawnPoint.global_position
+		new_bullet.global_rotation = %BulletSpawnPoint.global_rotation
+		%BulletSpawnPoint.add_child(new_bullet)
 		
 	if velocity.length() > 0:
 		velocity = Vector2.UP.rotated(rotation) * speed
