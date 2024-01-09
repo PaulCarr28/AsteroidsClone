@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp1ps5epxwght"]
+
+[ext_resource type="PackedScene" uid="uid://dihccesgxk7q8" path="res://asteroid.tscn" id="1_1c6to"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4p6t2"]
+
+[node name="Asteroid" instance=ExtResource("1_1c6to")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_4p6t2")
