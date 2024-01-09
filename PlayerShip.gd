@@ -37,3 +37,7 @@ func shoot():
 
 func _on_shoot_cooldown_timer_timeout():
 	isAbleToShoot = true
+	
+	
+func destroyed_by_asteroid():
+	queue_free()

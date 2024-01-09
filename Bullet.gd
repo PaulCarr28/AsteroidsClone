@@ -1,5 +1,6 @@
 extends Area2D
 
+signal add_score
 
 func _physics_process(delta):
 	const SPEED = 600
@@ -9,7 +10,10 @@ func _physics_process(delta):
 	position += direction * SPEED * delta
 
 
-func _on_body_entered(body):
-	if body.has_method("take_damage:"):
-		body.take_damage()
+
+
+func _on_area_entered(area):
 	queue_free()
+	if area.has_method("take_damage"):
+		area.take_damage()
+		add_score.emit()

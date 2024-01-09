@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dedouqbxiu6i7" path="res://icon.svg" id="2_7lgkw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_erb2u"]
+radius = 85.2878
 
 [node name="Bullet" type="Area2D"]
 top_level = true
@@ -15,4 +16,5 @@ texture = ExtResource("2_7lgkw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_erb2u")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
