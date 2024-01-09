@@ -14,8 +14,15 @@ texture = ExtResource("2_xptfi")
 
 [node name="BulletSpawnPoint" type="Marker2D" parent="Sprite2D"]
 unique_name_in_owner = true
-position = Vector2(0, -66)
+position = Vector2(0, -161)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_lfe6m")
+
+[node name="ShootCooldownTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="ShootCooldownTimer" to="." method="_on_shoot_cooldown_timer_timeout"]

@@ -6,6 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_erb2u"]
 
 [node name="Bullet" type="Area2D"]
+top_level = true
 script = ExtResource("1_xm6dn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
