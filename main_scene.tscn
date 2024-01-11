@@ -1,20 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://jj50bjisqubv"]
+[gd_scene load_steps=4 format=3 uid="uid://jj50bjisqubv"]
 
 [ext_resource type="Script" path="res://main_scene.gd" id="1_1fdpw"]
-[ext_resource type="PackedScene" uid="uid://dihccesgxk7q8" path="res://asteroid.tscn" id="1_6yw33"]
 [ext_resource type="PackedScene" uid="uid://dmaoiryrs4v88" path="res://player_ship.tscn" id="1_qd2eb"]
 
 [sub_resource type="Curve2D" id="Curve2D_g74y1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -48, -66, 0, 0, 0, 0, -48, 1166, 0, 0, 0, 0, 2053, 1164, 0, 0, 0, 0, 2049, -65, 0, 0, 0, 0, -49, -66)
+"points": PackedVector2Array(0, 0, 0, 0, -21, -22, 0, 0, 0, 0, -30, 1105, 0, 0, 0, 0, 1953, 1112, 0, 0, 0, 0, 1946, -29, 0, 0, 0, 0, -16, -20)
 }
 point_count = 5
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_1fdpw")
-
-[node name="Asteroid" parent="." instance=ExtResource("1_6yw33")]
-position = Vector2(573, 570)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -36,12 +32,11 @@ curve = SubResource("Curve2D_g74y1")
 
 [node name="AsteroidSpawnPosition" type="PathFollow2D" parent="AsteroidPath"]
 unique_name_in_owner = true
-position = Vector2(-48, -66)
-rotation = 1.5708
+position = Vector2(-21, -22)
+rotation = 1.57878
+metadata/_edit_group_ = true
 
 [node name="AsteroidTimer" type="Timer" parent="."]
-wait_time = 0.5
 autostart = true
 
-[connection signal="add_score" from="Asteroid" to="." method="_on_asteroid_add_score"]
 [connection signal="timeout" from="AsteroidTimer" to="." method="_on_asteroid_timer_timeout"]

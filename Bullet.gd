@@ -12,8 +12,8 @@ func _physics_process(delta):
 
 
 
-func _on_area_entered(area):
+
+func _on_body_entered(body):
 	queue_free()
-	if area.has_method("take_damage"):
-		area.take_damage()
-		add_score.emit()
+	if body.has_method("take_damage"):
+		body.take_damage()
